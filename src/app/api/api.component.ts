@@ -10,7 +10,7 @@ export class ApiComponent implements OnInit {
 
   apiUrl = 'https://en.wikipedia.org/api/rest_v1/page/summary/';
 
-  @ViewChild('search') searchBox: ElementRef;
+  @ViewChild('search') searchBox: ElementRef<HTMLInputElement>;
   constructor(public http: HttpClient) { 
 
   }
