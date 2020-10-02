@@ -8,16 +8,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiComponent implements OnInit {
 
-  @ViewChild('search') searchBox: ElementRef;
-  constructor(public http: HttpClient) { }
+  apiUrl = 'https://en.wikipedia.org/api/rest_v1/page/summary/';
 
-  ngOnInit() {
-    this.http.get('https://en.wikipedia.org/api/rest_v1/page/summary/Viljandi').subscribe((res)=> {
-      console.log(res);
-  })
+  @ViewChild('search') searchBox: ElementRef;
+  constructor(public http: HttpClient) { 
 
   }
+
+  ngOnInit() {
+   
+  }
+
 startSearch () {
-  console.log(this.searchBox.nativeElement.value);
-}
+
+    const searchTerm = this.searchBox.nativeElement.value;
+
+    this.http.get( this.apiUrl + searchTerm ).subscribe((res)=> {
+        console.log(res);
+    })
+  }
 }
