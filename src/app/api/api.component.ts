@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiComponent implements OnInit {
 
-  @ViewChild('searh') searchBox: ElementRef;
+  @ViewChild('search') searchBox: ElementRef;
   constructor(public http: HttpClient) { }
 
   ngOnInit() {
