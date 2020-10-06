@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiComponent implements OnInit {
 
-  apiUrl = 'https://et.wikipedia.org/api/rest_v1/page/related/';
+  apiUrl = 'https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/';
   searchResult: any;
   searchImage: string;
 

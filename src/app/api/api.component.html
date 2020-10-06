@@ -1,4 +1,4 @@
-<input #search />
+<input #search placeholder="yyyy/mm/dd"/>
 <button (click)="startSearch()" >Search!</button>
 <div *ngIf="searchResult"> 
   <div *ngFor="let result of searchResult.pages">
