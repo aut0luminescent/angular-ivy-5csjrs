@@ -33,6 +33,6 @@ startSearch () {
   }
 
   getImageUrl (page) {
-    return page.thumbnail ? this.searchResult.thumbnail.source : undefined;
+    return page.thumbnail ? page.thumbnail.source : undefined;
   }
 }
