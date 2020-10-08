@@ -3,8 +3,8 @@
 <label>Day: </label><input #search2 /><br>
 <button (click)="startSearch()" >Search!</button>
 <div *ngIf="searchList"> 
-  <div *ngFor="let result of searchResult.pages">
-    <h2>{{ result.title }}</h2>
+  <div *ngFor="let result of searchList.articles">
+    <h2>{{ searchList.article.title }}</h2>
     <img [src]="getImageUrl(result)" [alt]="result.title" />
     <p>{{ result.extract }}</p>
    <!-- <p>Changed date {{ result.timestamp | date }}</p>-->

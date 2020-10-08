@@ -28,6 +28,7 @@ startSearch () {
     }).subscribe((res)=> {
         console.log(res);
         this.searchResult = res;
+        this.searchResult = this.searchList.mostread;
         this.searchImage = this.searchResult.thumbnail ? this.searchResult.thumbnail.source : undefined;
     })
   }
