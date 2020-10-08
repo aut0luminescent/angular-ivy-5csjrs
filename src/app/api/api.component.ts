@@ -35,8 +35,9 @@ startSearch () {
   }
 
   searchToday () {
-    let today = new Date();
-    const searchTerm = new Date();
+    let today = ( new Date() ).toLocaleDateString().split("/");
+  
+    const searchTerm = today;
 
     this.http.get( this.apiUrl + searchTerm, {
     }).subscribe((res)=> {
