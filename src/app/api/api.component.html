@@ -2,7 +2,7 @@
 <label>Month: </label><input #search1 /><br>
 <label>Day: </label><input #search2 /><br>
 <button (click)="startSearch()" >Search!</button>
-
+<button (click)="searchToday()" >Today</button>
 
 <div *ngIf="searchList"> 
   <div *ngFor="let result of searchList.articles">

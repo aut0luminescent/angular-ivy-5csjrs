@@ -16,6 +16,7 @@ export class ApiComponent implements OnInit {
   @ViewChild('search') searchBox: ElementRef<HTMLInputElement>;
   @ViewChild('search1') searchBox1: ElementRef<HTMLInputElement>;
   @ViewChild('search2') searchBox2: ElementRef<HTMLInputElement>;
+Date: any;
 
   constructor(public http: HttpClient) { }
 
@@ -23,6 +24,19 @@ export class ApiComponent implements OnInit {
 
 startSearch () {
     const searchTerm = this.searchBox.nativeElement.value + "/" + this.searchBox1.nativeElement.value + "/" + this.searchBox2.nativeElement.value;
+
+    this.http.get( this.apiUrl + searchTerm, {
+    }).subscribe((res)=> {
+        console.log(res);
+        this.searchResult = res;
+        this.searchList = this.searchResult.mostread;
+        this.searchImage = this.searchResult.thumbnail ? this.searchResult.thumbnail.source : undefined;
+    })
+  }
+
+  searchToday () {
+    let today = new Date();
+    const searchTerm = new Date();
 
     this.http.get( this.apiUrl + searchTerm, {
     }).subscribe((res)=> {
