@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiComponent implements OnInit {
 
-  apiUrl = 'https://wikimedia.org/api/rest_v1/feed/featured/';
+  apiUrl = 'https://en.wikipedia.org/api/rest_v1/feed/featured/';
   searchResult: any;
   searchImage: string;
   searchList: any;
@@ -28,7 +28,7 @@ startSearch () {
     }).subscribe((res)=> {
         console.log(res);
         this.searchResult = res;
-        this.searchResult = this.searchList.mostread;
+        this.searchList = this.searchResult.mostread;
         this.searchImage = this.searchResult.thumbnail ? this.searchResult.thumbnail.source : undefined;
     })
   }
