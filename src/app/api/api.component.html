@@ -2,7 +2,7 @@
 <label>Month: </label><input #search1 /><br>
 <label>Day: </label><input #search2 /><br>
 <button (click)="startSearch()" >Search!</button>
-<div *ngIf="searchResult"> 
+<div *ngIf="searchList"> 
   <div *ngFor="let result of searchResult.pages">
     <h2>{{ result.title }}</h2>
     <img [src]="getImageUrl(result)" [alt]="result.title" />

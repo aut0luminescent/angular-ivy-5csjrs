@@ -11,20 +11,20 @@ export class ApiComponent implements OnInit {
   apiUrl = 'https://wikimedia.org/api/rest_v1/feed/featured/';
   searchResult: any;
   searchImage: string;
+  searchList: any;
 
   @ViewChild('search') searchBox: ElementRef<HTMLInputElement>;
+  @ViewChild('search1') searchBox1: ElementRef<HTMLInputElement>;
+  @ViewChild('search2') searchBox2: ElementRef<HTMLInputElement>;
 
   constructor(public http: HttpClient) { }
 
   ngOnInit() {}
 
 startSearch () {
-    const searchTerm = this.searchBox.nativeElement.value;
+    const searchTerm = this.searchBox.nativeElement.value + "/" + this.searchBox1.nativeElement.value + "/" + this.searchBox2.nativeElement.value;
 
     this.http.get( this.apiUrl + searchTerm, {
-      headers: {
-        "Accept-Language": "et_ee"
-      }
     }).subscribe((res)=> {
         console.log(res);
         this.searchResult = res;
