@@ -35,7 +35,7 @@ startSearch () {
   }
 
   searchToday () {
-    let today = ( new Date() ).toLocaleDateString().split("/");
+    let today = ( new Date() ).toLocaleDateString("fr-CA").replace(/-/g, "/");
   
     const searchTerm = today;
 
