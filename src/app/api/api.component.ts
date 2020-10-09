@@ -12,11 +12,12 @@ export class ApiComponent implements OnInit {
   searchResult: any;
   searchImage: string;
   searchList: any;
+  Date: any;
 
   @ViewChild('search') searchBox: ElementRef<HTMLInputElement>;
   @ViewChild('search1') searchBox1: ElementRef<HTMLInputElement>;
   @ViewChild('search2') searchBox2: ElementRef<HTMLInputElement>;
-Date: any;
+
 
   constructor(public http: HttpClient) { }
 
