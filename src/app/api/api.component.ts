@@ -18,7 +18,6 @@ export class ApiComponent implements OnInit {
   @ViewChild('search1') searchBox1: ElementRef<HTMLInputElement>;
   @ViewChild('search2') searchBox2: ElementRef<HTMLInputElement>;
 
-
   constructor(public http: HttpClient) { }
 
   ngOnInit() {}

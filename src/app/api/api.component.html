@@ -7,7 +7,7 @@
 <div *ngIf="searchList"> 
   <div *ngFor="let result of searchList.articles">
     <p> {{ result.rank }} </p>
-    <a [href]="result.content_urls.desktop.page">{{ result.title }}</a><br>
+    <a [href]="result.content_urls.desktop.page">{{ result.normalizedtitle }}</a><br>
     <img [src]="getImageUrl(result)" [alt]="result.title" />
     <p>{{ result.description }}</p>
   
